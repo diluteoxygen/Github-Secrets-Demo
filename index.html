@@ -12,7 +12,7 @@
 
     <script>
       function checkSecret() {
-        const secret = "{{COLA}}";
+        const secret = "{{process.env.COLA}}";
         const userInput = document.getElementById("secret-input").value;
         const resultElement = document.getElementById("result");
 
