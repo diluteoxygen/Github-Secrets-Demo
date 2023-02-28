@@ -5,11 +5,23 @@
   </head>
   <body>
     <h1>Github Secrets Demo</h1>
-    <p id="secret-value">Loading secret value...</p>
+    <p>Enter the secret value for COLA:</p>
+    <input type="text" id="secret-input">
+    <button onclick="checkSecret()">Go</button>
+    <p id="result"></p>
 
     <script>
-      const secret = "{{{ secrets.COLA }}}";
-      document.getElementById("secret-value").innerText = secret;
+      function checkSecret() {
+        const secret = "{{COLA}}";
+        const userInput = document.getElementById("secret-input").value;
+        const resultElement = document.getElementById("result");
+
+        if (userInput === secret) {
+          resultElement.innerText = "SUCCESS";
+        } else {
+          resultElement.innerText = "FAILED";
+        }
+      }
     </script>
   </body>
 </html>
