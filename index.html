@@ -16,9 +16,17 @@
         const userInput = document.getElementById("secret-input").value;
         const resultElement = document.getElementById("result");
 
+        if (!secret) {
+          console.error("Secret value not found");
+          resultElement.innerText = "Error: Secret value not found";
+          return;
+        }
+
         if (userInput === secret) {
+          console.log("Secrets match");
           resultElement.innerText = "SUCCESS";
         } else {
+          console.log("Secrets do not match");
           resultElement.innerText = "FAILED";
         }
       }
