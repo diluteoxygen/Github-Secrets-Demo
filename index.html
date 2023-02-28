@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github Secrets Demo</title>
+  </head>
+  <body>
+    <h1>Github Secrets Demo</h1>
+    <p id="secret-value">Loading secret value...</p>
+
+    <script>
+      const secret = "{{secrets.COLA}}";
+      document.getElementById("secret-value").innerText = secret;
+    </script>
+  </body>
+</html>
